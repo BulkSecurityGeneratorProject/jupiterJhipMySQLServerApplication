@@ -116,7 +116,8 @@ public class UserService {
         // new user is not active
         newUser.setActivated(false);
         // new user gets registration key
-        newUser.setActivationKey(RandomUtil.generateActivationKey());
+		String activationKey = RandomUtil.generateActivationKey();
+        newUser.setActivationKey(activationKey);
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
@@ -124,6 +125,11 @@ public class UserService {
         cacheManager.getCache(UserRepository.USERS_BY_LOGIN_CACHE).evict(newUser.getLogin());
         cacheManager.getCache(UserRepository.USERS_BY_EMAIL_CACHE).evict(newUser.getEmail());
         log.debug("Created Information for User: {}", newUser);
+
+		// Auto activation by Registration default
+		activateRegistration(activationKey);
+
+
         return newUser;
     }
 
