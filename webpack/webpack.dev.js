@@ -24,7 +24,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
                 '/h2-console',
                 '/auth'
             ],
-            target: 'http://127.0.0.1:8080',
+            target: 'http://' + require("os").hostname() + ':8000', 				//'http://127.0.0.1:8080', 
             secure: false
         }],
         watchOptions: {
@@ -71,8 +71,9 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
             host: 'localhost',
             port: 9000,
             proxy: {
-                target: 'http://localhost:9060'
-            }
+                target: 'http://' + require("os").hostname() + ':9060', 
+				//'http://localhost:9060'
+            } 
         }, {
             reload: false
         }),

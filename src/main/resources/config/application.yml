@@ -51,18 +51,18 @@ spring:
     social:
         # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
         google:
-            client-id: xxx
-            client-secret: xxx
+            client-id: 823322900167-t0tu6t5ggt5hdo1quveu3ja44k5il0fd.apps.googleusercontent.com
+            client-secret: pvuG239T7rUnurzveglicSZ1
 
         # see https://developers.facebook.com/docs/facebook-login/v2.2
         facebook:
-            client-id: xxx
-            client-secret: xxx
+            client-id: 197255044341093
+            client-secret: 6d3c31436e5b62cfc543808026d10a1a
 
         # see https://apps.twitter.com/app/
         twitter:
-            client-id: xxx
-            client-secret: xxx
+            client-id: wGxaoagLZdM4tYtTEse8GGgqC
+            client-secret: uviCwqj2UXuJP3HgJ0GjykPQ3SYY0Lb4evT5vr72NsabSmjdYT
 
         # jhipster-needle-add-social-configuration
 security:
@@ -91,7 +91,7 @@ jhipster:
         queue-capacity: 10000
     # By default CORS is disabled. Uncomment to enable.
     #cors:
-        #allowed-origins: "*"
+        #allowed-origins: "http://localhost:8100"
         #allowed-methods: "*"
         #allowed-headers: "*"
         #exposed-headers: "Authorization,Link,X-Total-Count"
